@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Welcome to Daniel's Page!</h1>
+  <p>Please key in your email and password</p>
+
+  <form action='/sign_in' method='post'>
+  <input area="text" name="email" placeholder="Key in email"> <!--1-->
+  <input area="text" name="password" placeholder="Key in password"> <!--1-->
+  <br>
+  <br>
+  <input type="submit" value="Submit!">
+  </form>
+
+  <a href = "/create_account">Create an Account</a>
+  <% if !session[:error].nil? %><br>
+  Error: <strong><%= session[:error] %></strong>
+  <% session.delete("error") %>
+  <% end %>
+</div>
+
+<!--
+  # <form> If username & password (dummy.rb) is correct. proceed to secret page
+#else redirect to again to log_in page with password wrong alert
+  -->
